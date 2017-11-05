@@ -5,7 +5,7 @@ app.controller("myctrl",($scope, $window ,myfactory)=>{
         var obj = {};
         
          
-        obj.username= "c" + $scope.mobilenumber;
+        obj.username= "c"+ $scope.mobilenumber;
         obj.password=$scope.password;
         
         console.log(obj)
