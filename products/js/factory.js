@@ -6,12 +6,13 @@ app.factory("myfactory",($http,$q)=>{
             console.log(obj)
              
              
-                var token= JSON.parse(localStorage.getItem('token'));
+                var token=   localStorage.getItem('token');
             
             $http.post(url,obj,{
 
 //withCredentials:true,
 headers:{
+     
     'Authorization':'Token '+token
 }
 
@@ -42,10 +43,19 @@ headers:{
             },
                  callimage : function(obj,id){
             var pr = $q.defer()
-            var url = "https://api.halanx.com/products/"+id+"/upload-image"
+            var url = "https://api.halanx.com/products/"+id+"/upload-image";
             console.log(obj)
-            $http.post(url,obj).then(function(data){
-                pr.resolve(data.data)
+             var token=   localStorage.getItem('token');
+           $http.post(url,obj,{
+
+//withCredentials:true,
+headers:{
+     
+    'Authorization':'Token '+token
+}
+
+} ).then(function(data)
+{pr.resolve(data.data)
                 console.log("success"),
                     function(err){
                     pr.reject(err)
@@ -56,7 +66,7 @@ headers:{
             },
                       callimage1 : function(obj,id){
             var pr = $q.defer()
-            var url = "https://api.halanx.com/products/"+id+"/upload-image"
+            var url = "https://api.halanx.com/products/"+id+"/upload-image";
             console.log(obj)
             $http.patch(url,obj).then(function(data){
                 
