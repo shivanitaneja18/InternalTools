@@ -7,12 +7,12 @@ obj.ProductName = $scope.productname
    obj.Price = $scope.productprice
                obj.Category = $scope.productcategory
 //               console.log($scope.files[0].name)
-//               obj.ProductImage = $scope.image
+        //    obj.ProductImage = $scope.image
                obj.Features = $scope.productdescription
                obj.ProductSize = $scope.productsize
               obj.StoreId = $scope.availablestores
                console.log(obj)
-               console.log($scope.image)
+               //console.log($scope.image)
               var promise =  myfactory.callserver(obj)
                promise.then((data)=>{
                    alert("data sent")
