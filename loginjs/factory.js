@@ -10,7 +10,7 @@ app.factory("myfactory",($http,$q)=>{
     
 				console.log("Token",data.data.key);
 
-                var token = JSON.stringify(data.data.key);
+                var token = data.data.key;
                 localStorage.setItem('token', token);
             
 			});
