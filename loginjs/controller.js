@@ -18,7 +18,7 @@ app.controller("myctrl",($scope, $window ,myfactory)=>{
                 if (data.key) {
                     
                      
-                    $window.location.href = "internaltools.halanx.com/login1.html";
+                    $window.location.href = "/login1.html";
 
                 }
             },(err)=>{
